@@ -18,6 +18,7 @@
       "import": "./dist/index.js",
       "node": "./dist/index.js",
       "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
       "default": "./dist/index.js"
     }
   },

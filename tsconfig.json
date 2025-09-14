@@ -16,7 +16,11 @@
     "allowSyntheticDefaultImports": true,
     "noErrorTruncation": true
   },
-  "includes": [
+  "include": [
     "./**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
   ]
 }
