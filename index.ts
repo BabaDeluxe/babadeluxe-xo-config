@@ -8,8 +8,8 @@ const config: FlatXoConfig = [
       '**/out/**',
       '**/build/**',
       '**/coverage/**',
-      '**/.vscode-test/**'
-    ]
+      '**/.vscode-test/**',
+    ],
   },
   {
     prettier: true,
@@ -21,10 +21,10 @@ const config: FlatXoConfig = [
       'prefer-arrow-callback': 'off',
       'max-len': 'off',
       'no-mixed-operators': 'off',
-      'quotes': 'off',
-      'semi': ['error', 'never'],
+      quotes: 'off',
+      semi: ['error', 'never'],
       'space-before-function-paren': 'off',
-      'indent': 'off',
+      indent: 'off',
       'object-curly-spacing': 'off',
       'array-bracket-spacing': 'off',
       'block-spacing': 'off',
@@ -45,8 +45,8 @@ const config: FlatXoConfig = [
       'template-curly-spacing': 'off',
       'yield-star-spacing': 'off',
 
-      'strict': 'off',
-      'camelcase': 'off',
+      strict: 'off',
+      camelcase: 'off',
       'no-new': 'off',
       'no-return-assign': 'warn',
       'no-useless-constructor': 'off',
@@ -62,8 +62,8 @@ const config: FlatXoConfig = [
       'unicorn/filename-case': 'off',
       'unicorn/no-empty-file': 'off',
 
-      'curly': ['error', 'multi-line'],
-      'eqeqeq': 'warn',
+      curly: ['error', 'multi-line'],
+      eqeqeq: 'warn',
       'no-throw-literal': 'warn',
       'prefer-const': 'error',
       'no-var': 'error',
@@ -71,7 +71,7 @@ const config: FlatXoConfig = [
       'no-lonely-if': 'error',
       'spaced-comment': ['error', 'always'],
       'capitalized-comments': ['warn', 'always'],
-      'yoda': 'error',
+      yoda: 'error',
       'max-nested-callbacks': ['warn', { max: 7 }],
       'max-statements-per-line': ['error', { max: 3 }],
 
@@ -80,8 +80,8 @@ const config: FlatXoConfig = [
         'error',
         {
           argsIgnorePattern: '(_.*)',
-          varsIgnorePattern: '^_'
-        }
+          varsIgnorePattern: '^_',
+        },
       ],
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/ban-types': 'off',
@@ -90,9 +90,9 @@ const config: FlatXoConfig = [
       '@typescript-eslint/prefer-promise-reject-errors': 'off',
       '@typescript-eslint/prefer-nullish-coalescing': 'off',
       '@typescript-eslint/no-unnecessary-type-assertion': 'error',
-      '@typescript-eslint/prefer-optional-chain': 'error'
-    }
-  }
+      '@typescript-eslint/prefer-optional-chain': 'error',
+    },
+  },
 ]
 
 export default config

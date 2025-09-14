@@ -24,7 +24,8 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "npx etsc && tsc --emitDeclarationOnly",
+    "format": "xo --config index.ts --fix --prettier",
+    "build": "npx rimraf -g ./dist/**/* && tsc",
     "publish-patch": "npm version patch && npm publish",
     "publish-minor": "npm version minor && npm publish",
     "publish-major": "npm version major && npm publish"
@@ -35,8 +36,10 @@
     "xo": "^1.2.2"
   },
   "devDependencies": {
-    "typescript": "^5.9.2",
     "@sindresorhus/tsconfig": "^8.0.1",
-    "esbuild-node-tsc": "^2.0.5"
+    "esbuild-node-tsc": "^2.0.5",
+    "husky": "^9.1.7",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.2"
   }
 }

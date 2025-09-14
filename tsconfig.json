@@ -8,15 +8,12 @@
     "erasableSyntaxOnly": false,
     "declarationMap": true,
     "strictNullChecks": true,
-    "composite": true,
+    "composite": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "noEmit": false,
     "noErrorTruncation": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-  },
-  "include": [
-    "./**/*"
-  ]
+  }
 }
