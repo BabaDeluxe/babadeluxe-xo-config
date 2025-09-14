@@ -11,8 +11,7 @@
     "typescript",
     "prettier"
   ],
-  "exports": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "exports": "./dist",
   "engines": {
     "node": ">=18"
   },
