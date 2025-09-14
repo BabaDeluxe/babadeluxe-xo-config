@@ -31,3 +31,4 @@ bundle-analysis.html
 *.db
 *.vsix
 *.old
+.npmrc
