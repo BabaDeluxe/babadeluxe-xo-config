@@ -2,8 +2,14 @@ node_modules/
 src/
 .git/
 .vscode/
+.husky/
 *.log
-.env
+.env*
 tsconfig.json
-.gitignore
-README.md
+.*
+example.npmrc
+test-package.sh
+package.json
+package-lock.json
+xo[.-]config.ts
+*.md
