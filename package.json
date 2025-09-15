@@ -28,7 +28,8 @@
     "build": "npx rimraf -g ./dist/**/* && tsc",
     "publish-patch": "npm version patch && npm publish",
     "publish-minor": "npm version minor && npm publish",
-    "publish-major": "npm version major && npm publish"
+    "publish-major": "npm version major && npm publish",
+    "prepare": "husky"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.43.0",
