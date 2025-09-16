@@ -26,6 +26,7 @@
   "scripts": {
     "format": "xo --config ./src/index.ts --fix --prettier",
     "build": "npx rimraf -g ./dist/**/* && tsc",
+    "test-package": "npm pack --dry-run",
     "publish-patch": "npm version patch && npm publish",
     "publish-minor": "npm version minor && npm publish",
     "publish-major": "npm version major && npm publish",

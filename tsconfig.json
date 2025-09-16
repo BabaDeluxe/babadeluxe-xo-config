@@ -8,7 +8,6 @@
     "erasableSyntaxOnly": false,
     "declarationMap": true,
     "strictNullChecks": true,
-    "composite": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "noEmit": false,
