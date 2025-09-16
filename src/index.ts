@@ -111,6 +111,18 @@ const config: FlatXoConfig = [
           selector: 'enumMember',
           format: ['UPPER_CASE'],
         },
+        {
+          selector: 'classProperty',
+          modifiers: ['private'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classMethod',
+          modifiers: ['private'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
       ],
     },
   },

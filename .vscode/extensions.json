@@ -4,7 +4,6 @@
     "recommendations": [
         "pmneo.tsimporter",
         "EditorConfig.EditorConfig",
-        "nyxb.vscode-styled-colors",
-        "samverschueren.linter-xo"
+        "nyxb.vscode-styled-colors"
     ]
 }
