@@ -1,4 +1,3 @@
-/* eslint-disable  @typescript-eslint/naming-convention */
 import { type FlatXoConfig } from 'xo'
 
 const config: FlatXoConfig = [
@@ -87,184 +86,74 @@ const config: FlatXoConfig = [
       '@typescript-eslint/prefer-optional-chain': 'error',
       '@typescript-eslint/naming-convention': [
         'error',
-
-        // Default rule - camelCase for most identifiers
         {
           selector: 'default',
           format: ['camelCase'],
         },
-
-        // Variables - allow camelCase, UPPER_CASE (constants), leading underscore for unused
         {
           selector: 'variable',
           format: ['camelCase', 'UPPER_CASE'],
           leadingUnderscore: 'allow',
         },
-
-        // Parameters - allow leading underscore for unused parameters
         {
           selector: 'parameter',
           format: ['camelCase'],
           leadingUnderscore: 'allow',
         },
-
-        // Functions - allow PascalCase for React components, camelCase for regular functions
         {
           selector: 'function',
           format: ['camelCase', 'PascalCase'],
         },
-
-        // Type-like things (classes, interfaces, types, enums) - PascalCase
         {
           selector: 'typeLike',
           format: ['PascalCase'],
         },
-
-        // Type parameters (generics) - PascalCase
-        {
-          selector: 'typeParameter',
-          format: ['PascalCase'],
-        },
-
-        // Enum members - UPPER_CASE
         {
           selector: 'enumMember',
           format: ['UPPER_CASE'],
         },
-
-        // Object literal properties - camelCase (but overridden by more specific rules below)
-        {
-          selector: 'objectLiteralProperty',
-          format: ['camelCase'],
-        },
-
-        // Class properties - camelCase by default
         {
           selector: 'classProperty',
-          format: ['camelCase'],
-        },
-
-        // Static properties - allow UPPER_CASE for constants
-        {
-          selector: 'classProperty',
-          modifiers: ['static'],
           format: ['camelCase', 'UPPER_CASE'],
         },
-
-        // Private properties - require leading underscore
         {
           selector: 'classProperty',
           modifiers: ['private'],
           format: ['camelCase'],
           leadingUnderscore: 'require',
         },
-
-        // Private readonly properties - require leading underscore
         {
           selector: 'classProperty',
-          modifiers: ['private', 'readonly'],
+          modifiers: ['protected'],
           format: ['camelCase'],
           leadingUnderscore: 'require',
         },
-
-        // Private static properties - require leading underscore, allow UPPER_CASE
-        {
-          selector: 'classProperty',
-          modifiers: ['private', 'static'],
-          format: ['camelCase', 'UPPER_CASE'],
-          leadingUnderscore: 'require',
-        },
-
-        // Private static readonly - require leading underscore, allow UPPER_CASE
-        {
-          selector: 'classProperty',
-          modifiers: ['private', 'static', 'readonly'],
-          format: ['camelCase', 'UPPER_CASE'],
-          leadingUnderscore: 'require',
-        },
-
-        // Class methods - camelCase
         {
           selector: 'classMethod',
           format: ['camelCase'],
         },
-
-        // Private methods - require leading underscore
         {
           selector: 'classMethod',
           modifiers: ['private'],
           format: ['camelCase'],
           leadingUnderscore: 'require',
         },
-
-        // Accessors (getters/setters) - camelCase
         {
-          selector: 'accessor',
-          format: ['camelCase'],
-        },
-
-        // Private accessors - require leading underscore
-        {
-          selector: 'accessor',
-          modifiers: ['private'],
+          selector: 'classMethod',
+          modifiers: ['protected'],
           format: ['camelCase'],
           leadingUnderscore: 'require',
         },
-
-        // Object literal methods - camelCase
-        {
-          selector: 'objectLiteralMethod',
-          format: ['camelCase'],
-        },
-
-        // Type properties (in interfaces/types) - camelCase
-        {
-          selector: 'typeProperty',
-          format: ['camelCase'],
-        },
-
-        // Type methods (in interfaces/types) - camelCase
-        {
-          selector: 'typeMethod',
-          format: ['camelCase'],
-        },
-
-        // Import names - allow any format (for third-party imports)
         {
           selector: 'import',
           format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
         },
-
-        // Properties that require quotes (API responses, HTTP headers, etc.) - ignore formatting
         {
-          selector: [
-            'classProperty',
-            'objectLiteralProperty',
-            'typeProperty',
-            'classMethod',
-            'objectLiteralMethod',
-            'typeMethod',
-            'accessor',
-            'enumMember',
-          ],
+          selector: ['objectLiteralProperty', 'objectLiteralMethod', 'typeProperty', 'typeMethod'],
           format: null,
           modifiers: ['requiresQuotes'],
         },
-
-        // Destructured variables - allow original names to be preserved
-        {
-          selector: 'variable',
-          modifiers: ['destructured'],
-          format: null,
-        },
-
-        // Destructured properties - allow original names
-        {
-          selector: 'objectLiteralProperty',
-          modifiers: ['destructured'],
-          format: null,
-        },
-      ]
+      ],
     },
   },
 ]
