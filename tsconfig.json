@@ -12,10 +12,5 @@
     "allowSyntheticDefaultImports": true,
     "noEmit": false,
     "noErrorTruncation": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
   },
-  "include": [
-    "**/*"
-  ]
 }
