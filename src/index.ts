@@ -77,13 +77,6 @@ const config: FlatXoConfig = [
       'max-statements-per-line': ['error', { max: 3 }],
 
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        {
-          argsIgnorePattern: '(_.*)',
-          varsIgnorePattern: '^_',
-        },
-      ],
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/ban-types': 'off',
       '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
@@ -101,6 +94,11 @@ const config: FlatXoConfig = [
         {
           selector: 'variable',
           format: ['camelCase', 'UPPER_CASE'],
+          leadingUnderscore: 'allow',
+        },
+        {
+          selector: 'parameter',
+          format: ['camelCase'],
           leadingUnderscore: 'allow',
         },
         {
