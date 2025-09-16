@@ -26,9 +26,9 @@
   "scripts": {
     "build": "npx rimraf -g ./dist/**/* && tsc",
     "test-package": "npm pack --dry-run",
-    "publish-patch": "npm version patch && npm publish",
-    "publish-minor": "npm version minor && npm publish",
-    "publish-major": "npm version major && npm publish"
+    "publish-patch": "npm run build && npm version patch && npm publish",
+    "publish-minor": "npm run build && npm version minor && npm publish",
+    "publish-major": "npm run build && npm version major && npm publish"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.43.0",
