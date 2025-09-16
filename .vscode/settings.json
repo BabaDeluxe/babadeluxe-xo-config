@@ -24,9 +24,6 @@
     "files.eol": "\n",
     "search.quickOpen.includeHistory": false,
     "typescript.tsserver.experimental.enableProjectDiagnostics": true,
-    "[vue]": {
-        "editor.defaultFormatter": "Vue.volar"
-    },
     "[javascript]": {
         "editor.defaultFormatter": "samverschueren.linter-xo"
     },
