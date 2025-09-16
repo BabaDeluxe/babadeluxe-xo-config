@@ -26,6 +26,7 @@
   "scripts": {
     "build": "npx rimraf -g ./dist/**/* && tsc",
     "test-package": "npm pack --dry-run",
+    "test-xo-config": "xo --config ./src/index.ts",
     "publish-patch": "npm run build && npm version patch && npm publish",
     "publish-minor": "npm run build && npm version minor && npm publish",
     "publish-major": "npm run build && npm version major && npm publish"
