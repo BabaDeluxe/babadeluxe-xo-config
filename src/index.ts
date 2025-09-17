@@ -11,7 +11,441 @@ const config: FlatXoConfig = [
       '**/.vscode-test/**',
     ],
   },
+  // TypeScript files (.ts, .tsx)
   {
+    files: ['**/*.ts', '**/*.tsx'],
+    prettier: true,
+    space: 2,
+    semicolon: false,
+    rules: {
+      'no-await-in-for-loop': 'off',
+      'arrow-body-style': 'off',
+      'prefer-arrow-callback': 'off',
+      'max-len': 'off',
+      'no-mixed-operators': 'off',
+      quotes: 'off',
+      semi: ['error', 'never'],
+      'space-before-function-paren': 'off',
+      indent: 'off',
+      'object-curly-spacing': 'off',
+      'array-bracket-spacing': 'off',
+      'block-spacing': 'off',
+      'comma-dangle': 'off',
+      'comma-spacing': 'off',
+      'computed-property-spacing': 'off',
+      'func-call-spacing': 'off',
+      'key-spacing': 'off',
+      'keyword-spacing': 'off',
+      'no-multi-spaces': 'off',
+      'no-trailing-spaces': 'off',
+      'no-whitespace-before-property': 'off',
+      'padded-blocks': 'off',
+      'rest-spread-spacing': 'off',
+      'space-before-blocks': 'off',
+      'space-in-parens': 'off',
+      'space-infix-ops': 'off',
+      'template-curly-spacing': 'off',
+      'yield-star-spacing': 'off',
+
+      strict: 'off',
+      camelcase: 'off',
+      'no-new': 'off',
+      'no-return-assign': 'warn',
+      'no-useless-constructor': 'off',
+      'no-async-promise-executor': 'error',
+      'no-new-func': 'error',
+      'no-undef': 'off',
+      'no-inline-comments': 'off',
+
+      'unicorn/numeric-separators-style': 'off',
+      'unicorn/prefer-array-some': 'off',
+      'unicorn/prefer-module': 'off',
+      'unicorn/prefer-event-target': 'off',
+      'unicorn/filename-case': 'off',
+      'unicorn/no-empty-file': 'off',
+
+      curly: ['error', 'multi-line'],
+      eqeqeq: 'warn',
+      'no-throw-literal': 'warn',
+      'prefer-const': 'error',
+      'no-var': 'error',
+      'no-empty-function': 'warn',
+      'no-lonely-if': 'error',
+      'spaced-comment': ['error', 'always'],
+      'capitalized-comments': ['warn', 'always'],
+      yoda: 'error',
+      'max-nested-callbacks': ['warn', { max: 7 }],
+      'max-statements-per-line': ['error', { max: 3 }],
+
+      'no-unused-vars': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
+      '@typescript-eslint/ban-types': 'off',
+      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/prefer-promise-reject-errors': 'off',
+      '@typescript-eslint/prefer-nullish-coalescing': 'off',
+      '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+      '@typescript-eslint/prefer-optional-chain': 'error',
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'default',
+          format: ['camelCase'],
+        },
+        {
+          selector: 'variable',
+          format: ['camelCase'],
+          leadingUnderscore: 'allow',
+        },
+        {
+          selector: 'parameter',
+          format: ['camelCase'],
+          leadingUnderscore: 'allow',
+        },
+        {
+          selector: 'function',
+          format: ['camelCase', 'PascalCase'],
+        },
+        {
+          selector: 'typeLike',
+          format: ['PascalCase'],
+        },
+        {
+          selector: 'typeParameter',
+          format: ['PascalCase'],
+        },
+        {
+          selector: 'enumMember',
+          format: ['UPPER_CASE'],
+        },
+
+        // Modern private fields (#syntax)
+        {
+          selector: 'classProperty',
+          modifiers: ['#private'],
+          format: ['camelCase'],
+        },
+
+        // PARAMETER PROPERTIES - MOST SPECIFIC FIRST
+        {
+          selector: 'parameterProperty',
+          modifiers: ['private', 'readonly'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'parameterProperty',
+          modifiers: ['protected', 'readonly'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'parameterProperty',
+          modifiers: ['public', 'readonly'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'parameterProperty',
+          modifiers: ['private'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'parameterProperty',
+          modifiers: ['protected'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'parameterProperty',
+          modifiers: ['public'],
+          format: ['camelCase'],
+        },
+
+        // CLASS PROPERTIES - Three modifier combinations
+        {
+          selector: 'classProperty',
+          modifiers: ['private', 'static', 'readonly'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['protected', 'static', 'readonly'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['public', 'static', 'readonly'],
+          format: ['camelCase'],
+        },
+
+        // Two modifier combinations
+        {
+          selector: 'classProperty',
+          modifiers: ['private', 'readonly'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['protected', 'readonly'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['public', 'readonly'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['private', 'static'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['protected', 'static'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['public', 'static'],
+          format: ['camelCase'],
+        },
+
+        // Single modifier properties
+        {
+          selector: 'classProperty',
+          modifiers: ['private'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['protected'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['public'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['static'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'classProperty',
+          modifiers: ['readonly'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'classProperty',
+          format: ['camelCase'],
+        },
+
+        // Method combinations
+        {
+          selector: 'classMethod',
+          modifiers: ['private', 'static'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classMethod',
+          modifiers: ['protected', 'static'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classMethod',
+          modifiers: ['public', 'static'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'classMethod',
+          modifiers: ['private'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classMethod',
+          modifiers: ['protected'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'classMethod',
+          modifiers: ['public'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'classMethod',
+          modifiers: ['static'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'classMethod',
+          format: ['camelCase'],
+        },
+
+        // Accessors
+        {
+          selector: 'accessor',
+          modifiers: ['private', 'static'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'accessor',
+          modifiers: ['protected', 'static'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'accessor',
+          modifiers: ['public', 'static'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'accessor',
+          modifiers: ['private'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'accessor',
+          modifiers: ['protected'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+        },
+        {
+          selector: 'accessor',
+          modifiers: ['public'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'accessor',
+          modifiers: ['static'],
+          format: ['camelCase'],
+        },
+        {
+          selector: 'accessor',
+          format: ['camelCase'],
+        },
+
+        // Interface/Type members
+        {
+          selector: 'typeProperty',
+          format: ['camelCase'],
+        },
+        {
+          selector: 'typeMethod',
+          format: ['camelCase'],
+        },
+
+        // Object literal members
+        {
+          selector: 'objectLiteralProperty',
+          format: ['camelCase'],
+        },
+        {
+          selector: 'objectLiteralMethod',
+          format: ['camelCase'],
+        },
+
+        {
+          selector: 'import',
+          format: ['camelCase', 'PascalCase'],
+        },
+
+        // Quoted members (keep at end)
+        {
+          selector: ['objectLiteralProperty', 'objectLiteralMethod', 'typeProperty', 'typeMethod'],
+          format: null,
+          modifiers: ['requiresQuotes'],
+        },
+      ],
+    },
+  },
+  // JavaScript files (.js)
+  {
+    files: ['**/*.js'],
+    prettier: true,
+    space: 2,
+    semicolon: false,
+    rules: {
+      'no-await-in-for-loop': 'off',
+      'arrow-body-style': 'off',
+      'prefer-arrow-callback': 'off',
+      'max-len': 'off',
+      'no-mixed-operators': 'off',
+      quotes: 'off',
+      semi: ['error', 'never'],
+      'space-before-function-paren': 'off',
+      indent: 'off',
+      'object-curly-spacing': 'off',
+      'array-bracket-spacing': 'off',
+      'block-spacing': 'off',
+      'comma-dangle': 'off',
+      'comma-spacing': 'off',
+      'computed-property-spacing': 'off',
+      'func-call-spacing': 'off',
+      'key-spacing': 'off',
+      'keyword-spacing': 'off',
+      'no-multi-spaces': 'off',
+      'no-trailing-spaces': 'off',
+      'no-whitespace-before-property': 'off',
+      'padded-blocks': 'off',
+      'rest-spread-spacing': 'off',
+      'space-before-blocks': 'off',
+      'space-in-parens': 'off',
+      'space-infix-ops': 'off',
+      'template-curly-spacing': 'off',
+      'yield-star-spacing': 'off',
+
+      strict: 'off',
+      camelcase: 'off',
+      'no-new': 'off',
+      'no-return-assign': 'warn',
+      'no-useless-constructor': 'off',
+      'no-async-promise-executor': 'error',
+      'no-new-func': 'error',
+      'no-undef': 'off',
+      'no-inline-comments': 'off',
+
+      'unicorn/numeric-separators-style': 'off',
+      'unicorn/prefer-array-some': 'off',
+      'unicorn/prefer-module': 'off',
+      'unicorn/prefer-event-target': 'off',
+      'unicorn/filename-case': 'off',
+      'unicorn/no-empty-file': 'off',
+
+      curly: ['error', 'multi-line'],
+      eqeqeq: 'warn',
+      'no-throw-literal': 'warn',
+      'prefer-const': 'error',
+      'no-var': 'error',
+      'no-empty-function': 'warn',
+      'no-lonely-if': 'error',
+      'spaced-comment': ['error', 'always'],
+      'capitalized-comments': ['warn', 'always'],
+      yoda: 'error',
+      'max-nested-callbacks': ['warn', { max: 7 }],
+      'max-statements-per-line': ['error', { max: 3 }],
+
+      'no-unused-vars': 'error',
+    },
+  },
+  // Vue files (.vue)
+  {
+    files: ['**/*.vue'],
     prettier: true,
     space: 2,
     semicolon: false,
