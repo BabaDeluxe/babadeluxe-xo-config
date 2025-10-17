@@ -48,6 +48,9 @@
     "xo": "^1.2.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
+    "@typescript-eslint/parser": "^8.43.0",
+    "xo": "^1.2.2",
     "@sindresorhus/tsconfig": "^8.0.1",
     "husky": "^9.1.7",
     "rimraf": "^6.0.1",
