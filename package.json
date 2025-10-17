@@ -4,7 +4,6 @@
   "description": "Shared XO ESLint configuration with Prettier integration",
   "author": "simwai",
   "license": "UNLICENSED",
-  "private": true,
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
