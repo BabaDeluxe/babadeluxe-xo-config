@@ -3,7 +3,22 @@
   "version": "0.1.26",
   "description": "Shared XO ESLint configuration with Prettier integration",
   "author": "simwai",
+  "license": "UNLICENSED",
+  "private": true,
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "eslint",
     "xo",
@@ -11,25 +26,19 @@
     "typescript",
     "prettier"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "node": "./dist/index.js",
-      "require": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
   "engines": {
     "node": ">=18"
   },
   "scripts": {
-    "build": "npx rimraf -g ./dist/**/* && tsc",
+    "format": "xo --config ./src/index.ts --prettier",
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "prepack": "unbuild",
     "test-package": "npm pack --dry-run",
-    "test-xo-config": "xo --config ./src/index.ts",
-    "publish-patch": "npm run build && npm version patch && npm publish",
-    "publish-minor": "npm run build && npm version minor && npm publish",
-    "publish-major": "npm run build && npm version major && npm publish"
+    "publish-patch": "npm version patch && npm publish",
+    "publish-minor": "npm version minor && npm publish",
+    "publish-major": "npm version major && npm publish",
+    "prepare": "husky"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.43.0",
@@ -38,7 +47,9 @@
   },
   "devDependencies": {
     "@sindresorhus/tsconfig": "^8.0.1",
+    "husky": "^9.1.7",
     "rimraf": "^6.0.1",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "unbuild": "^2.0.0"
   }
 }

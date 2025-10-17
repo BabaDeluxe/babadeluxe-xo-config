@@ -2,7 +2,7 @@
   "extends": "@sindresorhus/tsconfig",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./src",
+    "sourceRoot": "./src",
     "sourceMap": true,
     "experimentalDecorators": true,
     "erasableSyntaxOnly": false,
@@ -12,5 +12,5 @@
     "allowSyntheticDefaultImports": true,
     "noEmit": false,
     "noErrorTruncation": true,
-  },
+  }
 }
