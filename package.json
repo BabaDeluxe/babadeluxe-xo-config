@@ -31,7 +31,6 @@
   "scripts": {
     "format": "xo --config ./src/index.ts --prettier",
     "build": "unbuild",
-    "dev": "unbuild --stub",
     "test-package": "npm pack --dry-run",
     "publish-patch": "npm version patch && npm publish",
     "publish-minor": "npm version minor && npm publish",
