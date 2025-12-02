@@ -18,6 +18,7 @@ const config: FlatXoConfig = [
     space: 2,
     semicolon: false,
     rules: {
+      'capitalized-comments': 'off',
       'no-await-in-for-loop': 'off',
       'arrow-body-style': 'off',
       'prefer-arrow-callback': 'off',
@@ -72,7 +73,6 @@ const config: FlatXoConfig = [
       'no-empty-function': 'warn',
       'no-lonely-if': 'error',
       'spaced-comment': ['error', 'always'],
-      'capitalized-comments': ['warn', 'always'],
       yoda: 'error',
       'max-nested-callbacks': ['warn', { max: 7 }],
       'max-statements-per-line': ['error', { max: 3 }],
@@ -382,6 +382,7 @@ const config: FlatXoConfig = [
     space: 2,
     semicolon: false,
     rules: {
+      'capitalized-comments': 'off',
       'no-await-in-for-loop': 'off',
       'arrow-body-style': 'off',
       'prefer-arrow-callback': 'off',
@@ -436,7 +437,6 @@ const config: FlatXoConfig = [
       'no-empty-function': 'warn',
       'no-lonely-if': 'error',
       'spaced-comment': ['error', 'always'],
-      'capitalized-comments': ['warn', 'always'],
       yoda: 'error',
       'max-nested-callbacks': ['warn', { max: 7 }],
       'max-statements-per-line': ['error', { max: 3 }],
@@ -451,6 +451,7 @@ const config: FlatXoConfig = [
     space: 2,
     semicolon: false,
     rules: {
+      'capitalized-comments': 'off',
       'no-await-in-for-loop': 'off',
       'arrow-body-style': 'off',
       'prefer-arrow-callback': 'off',
@@ -505,7 +506,6 @@ const config: FlatXoConfig = [
       'no-empty-function': 'warn',
       'no-lonely-if': 'error',
       'spaced-comment': ['error', 'always'],
-      'capitalized-comments': ['warn', 'always'],
       yoda: 'error',
       'max-nested-callbacks': ['warn', { max: 7 }],
       'max-statements-per-line': ['error', { max: 3 }],
@@ -519,6 +519,7 @@ const config: FlatXoConfig = [
       '@typescript-eslint/prefer-nullish-coalescing': 'off',
       '@typescript-eslint/no-unnecessary-type-assertion': 'error',
       '@typescript-eslint/prefer-optional-chain': 'error',
+      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
       '@typescript-eslint/naming-convention': [
         'error',
         {
