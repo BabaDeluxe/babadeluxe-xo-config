@@ -1,4 +1,6 @@
 import { type FlatXoConfig } from 'xo'
+// @ts-expect-error - no type definitions available
+import noExplicitUndefined from 'eslint-plugin-no-explicit-undefined'
 
 const config: FlatXoConfig = [
   {
@@ -17,7 +19,12 @@ const config: FlatXoConfig = [
     prettier: true,
     space: 2,
     semicolon: false,
+    plugins: {
+      // eslint-disable-next-line
+      'no-undefined-type-declaration': noExplicitUndefined,
+    },
     rules: {
+      'no-undefined-type-declaration/no-undefined-type': 'error',
       'capitalized-comments': 'off',
       'no-await-in-for-loop': 'off',
       'arrow-body-style': 'off',
@@ -47,7 +54,6 @@ const config: FlatXoConfig = [
       'space-infix-ops': 'off',
       'template-curly-spacing': 'off',
       'yield-star-spacing': 'off',
-
       strict: 'off',
       camelcase: 'off',
       'no-new': 'off',
@@ -57,14 +63,12 @@ const config: FlatXoConfig = [
       'no-new-func': 'error',
       'no-undef': 'off',
       'no-inline-comments': 'off',
-
       'unicorn/numeric-separators-style': 'off',
       'unicorn/prefer-array-some': 'off',
       'unicorn/prefer-module': 'off',
       'unicorn/prefer-event-target': 'off',
       'unicorn/filename-case': 'off',
       'unicorn/no-empty-file': 'off',
-
       curly: ['error', 'multi-line'],
       eqeqeq: 'warn',
       'no-throw-literal': 'warn',
@@ -76,7 +80,6 @@ const config: FlatXoConfig = [
       yoda: 'error',
       'max-nested-callbacks': ['warn', { max: 7 }],
       'max-statements-per-line': ['error', { max: 3 }],
-
       'no-unused-vars': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/ban-types': 'off',
@@ -119,14 +122,12 @@ const config: FlatXoConfig = [
           selector: 'enumMember',
           format: ['UPPER_CASE'],
         },
-
         // Modern private fields (#syntax)
         {
           selector: 'classProperty',
           modifiers: ['#private'],
           format: ['camelCase'],
         },
-
         // PARAMETER PROPERTIES - MOST SPECIFIC FIRST
         {
           selector: 'parameterProperty',
@@ -162,7 +163,6 @@ const config: FlatXoConfig = [
           modifiers: ['public'],
           format: ['camelCase'],
         },
-
         // CLASS PROPERTIES - Three modifier combinations
         {
           selector: 'classProperty',
@@ -181,7 +181,6 @@ const config: FlatXoConfig = [
           modifiers: ['public', 'static', 'readonly'],
           format: ['camelCase'],
         },
-
         // Two modifier combinations
         {
           selector: 'classProperty',
@@ -217,7 +216,6 @@ const config: FlatXoConfig = [
           modifiers: ['public', 'static'],
           format: ['camelCase'],
         },
-
         // Single modifier properties
         {
           selector: 'classProperty',
@@ -250,7 +248,6 @@ const config: FlatXoConfig = [
           selector: 'classProperty',
           format: ['camelCase'],
         },
-
         // Method combinations
         {
           selector: 'classMethod',
@@ -295,7 +292,6 @@ const config: FlatXoConfig = [
           selector: 'classMethod',
           format: ['camelCase'],
         },
-
         // Accessors
         {
           selector: 'accessor',
@@ -340,32 +336,28 @@ const config: FlatXoConfig = [
           selector: 'accessor',
           format: ['camelCase'],
         },
-
         // Interface/Type members
         {
           selector: 'typeProperty',
-          format: ['camelCase'],
+          format: ['camelCase', 'UPPER_CASE', 'snake_case'],
         },
         {
           selector: 'typeMethod',
           format: ['camelCase'],
         },
-
         // Object literal members
         {
           selector: 'objectLiteralProperty',
-          format: ['camelCase'],
+          format: ['camelCase', 'UPPER_CASE', 'snake_case'],
         },
         {
           selector: 'objectLiteralMethod',
           format: ['camelCase'],
         },
-
         {
           selector: 'import',
           format: ['camelCase', 'PascalCase'],
         },
-
         // Quoted members (keep at end)
         {
           selector: ['objectLiteralProperty', 'objectLiteralMethod', 'typeProperty', 'typeMethod'],
@@ -411,7 +403,6 @@ const config: FlatXoConfig = [
       'space-infix-ops': 'off',
       'template-curly-spacing': 'off',
       'yield-star-spacing': 'off',
-
       strict: 'off',
       camelcase: 'off',
       'no-new': 'off',
@@ -421,14 +412,12 @@ const config: FlatXoConfig = [
       'no-new-func': 'error',
       'no-undef': 'off',
       'no-inline-comments': 'off',
-
       'unicorn/numeric-separators-style': 'off',
       'unicorn/prefer-array-some': 'off',
       'unicorn/prefer-module': 'off',
       'unicorn/prefer-event-target': 'off',
       'unicorn/filename-case': 'off',
       'unicorn/no-empty-file': 'off',
-
       curly: ['error', 'multi-line'],
       eqeqeq: 'warn',
       'no-throw-literal': 'warn',
@@ -440,7 +429,6 @@ const config: FlatXoConfig = [
       yoda: 'error',
       'max-nested-callbacks': ['warn', { max: 7 }],
       'max-statements-per-line': ['error', { max: 3 }],
-
       'no-unused-vars': 'error',
     },
   },
@@ -450,7 +438,12 @@ const config: FlatXoConfig = [
     prettier: true,
     space: 2,
     semicolon: false,
+    plugins: {
+      // eslint-disable-next-line
+      'no-undefined-type-declaration': noExplicitUndefined,
+    },
     rules: {
+      'no-undefined-type-declaration/no-undefined-type': 'error',
       'capitalized-comments': 'off',
       'no-await-in-for-loop': 'off',
       'arrow-body-style': 'off',
@@ -480,7 +473,6 @@ const config: FlatXoConfig = [
       'space-infix-ops': 'off',
       'template-curly-spacing': 'off',
       'yield-star-spacing': 'off',
-
       strict: 'off',
       camelcase: 'off',
       'no-new': 'off',
@@ -490,14 +482,12 @@ const config: FlatXoConfig = [
       'no-new-func': 'error',
       'no-undef': 'off',
       'no-inline-comments': 'off',
-
       'unicorn/numeric-separators-style': 'off',
       'unicorn/prefer-array-some': 'off',
       'unicorn/prefer-module': 'off',
       'unicorn/prefer-event-target': 'off',
       'unicorn/filename-case': 'off',
       'unicorn/no-empty-file': 'off',
-
       curly: ['error', 'multi-line'],
       eqeqeq: 'warn',
       'no-throw-literal': 'warn',
@@ -509,7 +499,6 @@ const config: FlatXoConfig = [
       yoda: 'error',
       'max-nested-callbacks': ['warn', { max: 7 }],
       'max-statements-per-line': ['error', { max: 3 }],
-
       'no-unused-vars': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/ban-types': 'off',
@@ -552,14 +541,12 @@ const config: FlatXoConfig = [
           selector: 'enumMember',
           format: ['UPPER_CASE'],
         },
-
         // Modern private fields (#syntax)
         {
           selector: 'classProperty',
           modifiers: ['#private'],
           format: ['camelCase'],
         },
-
         // PARAMETER PROPERTIES - MOST SPECIFIC FIRST
         {
           selector: 'parameterProperty',
@@ -595,7 +582,6 @@ const config: FlatXoConfig = [
           modifiers: ['public'],
           format: ['camelCase'],
         },
-
         // CLASS PROPERTIES - Three modifier combinations
         {
           selector: 'classProperty',
@@ -614,7 +600,6 @@ const config: FlatXoConfig = [
           modifiers: ['public', 'static', 'readonly'],
           format: ['camelCase'],
         },
-
         // Two modifier combinations
         {
           selector: 'classProperty',
@@ -650,7 +635,6 @@ const config: FlatXoConfig = [
           modifiers: ['public', 'static'],
           format: ['camelCase'],
         },
-
         // Single modifier properties
         {
           selector: 'classProperty',
@@ -683,7 +667,6 @@ const config: FlatXoConfig = [
           selector: 'classProperty',
           format: ['camelCase'],
         },
-
         // Method combinations
         {
           selector: 'classMethod',
@@ -728,7 +711,6 @@ const config: FlatXoConfig = [
           selector: 'classMethod',
           format: ['camelCase'],
         },
-
         // Accessors
         {
           selector: 'accessor',
@@ -773,32 +755,28 @@ const config: FlatXoConfig = [
           selector: 'accessor',
           format: ['camelCase'],
         },
-
         // Interface/Type members
         {
           selector: 'typeProperty',
-          format: ['camelCase'],
+          format: ['camelCase', 'UPPER_CASE', 'snake_case'],
         },
         {
           selector: 'typeMethod',
           format: ['camelCase'],
         },
-
         // Object literal members
         {
           selector: 'objectLiteralProperty',
-          format: ['camelCase'],
+          format: ['camelCase', 'UPPER_CASE', 'snake_case'],
         },
         {
           selector: 'objectLiteralMethod',
           format: ['camelCase'],
         },
-
         {
           selector: 'import',
           format: ['camelCase', 'PascalCase'],
         },
-
         // Quoted members (keep at end)
         {
           selector: ['objectLiteralProperty', 'objectLiteralMethod', 'typeProperty', 'typeMethod'],
