@@ -3,7 +3,7 @@
   "version": "0.3.2",
   "description": "Shared XO ESLint configuration with Prettier integration",
   "author": "simwai",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
