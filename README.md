@@ -12,7 +12,7 @@
 
 ## Overview
 
-It’s quite a remarkable thing, isn't it? The way we craft these digital architectures. When we step back and look at the patterns of our code, we’re essentially looking at a map of our own cognitive processes. This configuration is my attempt—or perhaps our collective attempt—to bring a certain level of harmony and emergent clarity to that process.
+It’s quite a remarkable thing, isn't it? The way we craft these digital architectures. When we step back and look at the patterns of our code, we’re essentially looking at a map of our own cognitive processes. This configuration is BabDeluxe's attempt to bring a certain level of harmony and emergent clarity to that process.
 
 The `@babadeluxe/xo-config` provides a unified, pre-configured environment for [XO](https://github.com/xojs/xo), specifically tuned for TypeScript and Vue development. It’s about reducing the friction between thought and expression, ensuring that the structural integrity of your projects remains sound as they evolve toward greater complexity.
 
@@ -21,7 +21,7 @@ The `@babadeluxe/xo-config` provides a unified, pre-configured environment for [
 To integrate this configuration into your environment, you’ll need to install the package along with its peer dependencies. It's a simple alignment of resources:
 
 ```bash
-npm install --save-dev @babadeluxe/xo-config xo @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm i -g pnpm && pnpm install --save-dev @babadeluxe/xo-config xo @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 ## Usage
