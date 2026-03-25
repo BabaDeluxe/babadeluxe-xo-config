@@ -38,9 +38,9 @@
     "format": "xo . --config ./xo.config.ts --prettier --fix",
     "build": "unbuild",
     "test-package": "npm pack --dry-run",
-    "publish-patch": "npm run build && npm version patch && npm publish",
-    "publish-minor": "npm run build && npm version minor && npm publish",
-    "publish-major": "npm run build && npm version major && npm publish",
+    "publish-patch": "dotenv -e .env.local -- npm run build && npm version patch && npm publish",
+    "publish-minor": "dotenv -e .env.local -- npm run build && npm version minor && npm publish",
+    "publish-major": "dotenv -e .env.local -- npm run build && npm version major && npm publish",
     "prepare": "husky"
   },
   "peerDependencies": {
@@ -55,6 +55,7 @@
     "@typescript-eslint/parser": "^8.43.0",
     "baseline-browser-mapping": "^2.8.32",
     "colorino": "^0.19.3",
+    "dotenv-cli": "^11.0.0",
     "globby": "^16.1.1",
     "husky": "^9.1.7",
     "rimraf": "^6.0.1",
