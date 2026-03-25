@@ -57,5 +57,8 @@
     "typescript": "^5.9.2",
     "unbuild": "^2.0.0",
     "xo": "^1.2.2"
+  },
+  "publishConfig": {
+    "registry": "https://npflared.simonwaiblinger.workers.dev"
   }
 }
