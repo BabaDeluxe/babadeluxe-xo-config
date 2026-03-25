@@ -1,4 +1,4 @@
-import { type FlatXoConfig } from 'xo'
+import { type FlatXoConfig } from 'xo';
 
 const config: FlatXoConfig = [
   {
@@ -774,6 +774,6 @@ const config: FlatXoConfig = [
       ],
     },
   },
-]
+];
 
-export default config
+export default config;

@@ -5,23 +5,24 @@
   "author": "simwai",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/xo.config.cjs",
+  "module": "./dist/xo.config.mjs",
+  "types": "./dist/xo.config.d.ts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
+        "types": "./dist/xo.config.d.mts",
+        "default": "./dist/xo.config.mjs"
       },
       "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
+        "types": "./dist/xo.config.d.cts",
+        "default": "./dist/xo.config.cjs"
       }
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE"
   ],
   "keywords": [
     "eslint",
@@ -34,7 +35,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "format": "xo . --config ./src/index.ts --prettier --fix",
+    "format": "xo . --config ./xo.config.ts --prettier --fix",
     "build": "unbuild",
     "test-package": "npm pack --dry-run",
     "publish-patch": "npm run build && npm version patch && npm publish",
@@ -49,9 +50,12 @@
   },
   "devDependencies": {
     "@sindresorhus/tsconfig": "^8.0.1",
+    "@types/node": "^25.5.0",
     "@typescript-eslint/eslint-plugin": "^8.43.0",
     "@typescript-eslint/parser": "^8.43.0",
     "baseline-browser-mapping": "^2.8.32",
+    "colorino": "^0.19.3",
+    "globby": "^16.1.1",
     "husky": "^9.1.7",
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",

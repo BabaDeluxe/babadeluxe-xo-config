@@ -3,6 +3,7 @@
     // for the documentation about the extensions.json format
     "recommendations": [
         "EditorConfig.EditorConfig",
-        "nyxb.vscode-styled-colors"
+        "nyxb.vscode-styled-colors",
+        "samverschueren.linter-xo"
     ]
 }

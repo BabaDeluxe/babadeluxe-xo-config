@@ -2,15 +2,22 @@
   "extends": "@sindresorhus/tsconfig",
   "compilerOptions": {
     "outDir": "./dist",
-    "sourceRoot": "./src",
+    "baseUrl": ".",
+    "sourceRoot": ".",
     "sourceMap": true,
     "experimentalDecorators": true,
     "erasableSyntaxOnly": false,
     "declarationMap": true,
-    "strictNullChecks": true,
+    "strict": true,
+    "incremental": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "noEmit": false,
     "noErrorTruncation": true,
-  }
+    "resolveJsonModule": true
+  },
+  "include": [
+    "*.ts"
+  ]
 }
