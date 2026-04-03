@@ -1,6 +1,6 @@
 {
   "name": "@babadeluxe/xo-config",
-  "version": "0.4.10",
+  "version": "0.4.11",
   "description": "Shared XO ESLint configuration with Prettier integration",
   "author": "simwai",
   "license": "MIT",
