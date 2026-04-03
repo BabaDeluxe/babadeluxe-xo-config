@@ -20,4 +20,4 @@ logs/
 *.local
 *.tsbuildinfo
 *.old
-.env*
+.env
