@@ -38,9 +38,9 @@
     "format": "xo . --config ./xo.config.ts --prettier --fix",
     "build": "unbuild",
     "test-package": "npm pack --dry-run",
-    "publish-patch": "pnpx tsx ./publish.ts patch",
-    "publish-minor": "pnpx tsx ./publish.ts minor",
-    "publish-major": "pnpx tsx ./publish.ts major",
+    "publish-patch": "tsx ./publish.ts patch",
+    "publish-minor": "tsx ./publish.ts minor",
+    "publish-major": "tsx ./publish.ts major",
     "prepare": "husky"
   },
   "peerDependencies": {
@@ -57,7 +57,6 @@
     "colorino": "^0.19.3",
     "globby": "^16.1.1",
     "husky": "^9.1.7",
-    "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
     "unbuild": "^2.0.0",
     "xo": "^1.2.2"
