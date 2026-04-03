@@ -2,7 +2,6 @@ import { copyFile, mkdir } from 'node:fs/promises'
 import { join } from 'node:path'
 import { defineBuildConfig } from 'unbuild'
 import { globby } from 'globby'
-import { colorino } from 'colorino'
 
 export default defineBuildConfig({
   entries: ['./xo.config.ts'],
@@ -22,7 +21,7 @@ export default defineBuildConfig({
           await copyFile(file, join('dist', file))
         })
       )
-      colorino.log(`✅ Copied ${mdFiles.length} markdown file(s) to dist/`)
+      console.log(`✅ Copied ${mdFiles.length} markdown file(s) to dist/`)
     },
   },
 })
