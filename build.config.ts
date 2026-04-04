@@ -1,5 +1,3 @@
-import { copyFile, mkdir } from 'node:fs/promises'
-import { join } from 'node:path'
 import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
