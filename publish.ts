@@ -11,5 +11,5 @@ if (!process.env['NPM_TOKEN']) {
 }
 
 execSync('npm run build', { stdio: 'inherit', env: process.env })
-// execSync(`npm version ${bump}`, { stdio: 'inherit', env: process.env })
-// execSync('npm publish', { stdio: 'inherit', env: process.env })
+execSync(`npm version ${bump}`, { stdio: 'inherit', env: process.env })
+execSync('npm publish', { stdio: 'inherit', env: process.env })
