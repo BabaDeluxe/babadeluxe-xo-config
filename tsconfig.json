@@ -20,7 +20,10 @@
     "allowSyntheticDefaultImports": true,
     "noEmit": false,
     "noErrorTruncation": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "types": [
+      "node"
+    ]
   },
   "include": [
     "*.ts"
