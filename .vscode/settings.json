@@ -1,36 +1,30 @@
 {
-    // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
-    "typescript.tsc.autoDetect": "off",
+    "js/ts.tsc.autoDetect": "off",
     "editor.formatOnSave": true,
-    "editor.formatOnType": false, // required
+    "editor.formatOnType": false,
     "files.exclude": {
-        "**/out/**": false, // set this to true to hide the "out" folder with the compiled JS files
-        "**/dist/**": false // set this to true to hide the "dist" folder with the compiled JS files
+        "**/dist/**": false
     },
     "search.exclude": {
-        "**/out/**": true, // set this to false to include "out" folder in search results
-        "**/dist/**": true // set this to false to include "dist" folder in search results
+        "**/dist/**": true
     },
-    "editor.formatOnSaveMode": "file", // required to format on save
-    "typescript.suggest.paths": true,
-    "javascript.suggest.paths": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSaveMode": "file",
+    "js/ts.suggest.paths": true,
     "terminal.integrated.detectLocale": "on",
     "files.encoding": "utf8",
     "files.eol": "\n",
     "search.quickOpen.includeHistory": false,
-    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+    "js/ts.tsserver.experimental.enableProjectDiagnostics": false,
+    "xo.format.enable": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.fixAll.xo": "explicit"
     },
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
+    // "xo.options": {
+    //     "prettier": "compat",
+    //     "config": "./xo-config.ts"
+    // },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },

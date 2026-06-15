@@ -2,15 +2,27 @@
   "extends": "@sindresorhus/tsconfig",
   "compilerOptions": {
     "outDir": "./dist",
-    "sourceRoot": "./src",
+    "sourceRoot": ".",
     "sourceMap": true,
+    "lib": [
+      "DOM",
+      "ES2023"
+    ],
+    "target": "es2023",
+    "moduleResolution": "nodenext",
+    "module": "nodenext",
     "experimentalDecorators": true,
     "erasableSyntaxOnly": false,
-    "declarationMap": true,
-    "strictNullChecks": true,
+    "strict": true,
+    "incremental": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "noEmit": false,
     "noErrorTruncation": true,
-  }
+    "resolveJsonModule": true
+  },
+  "include": [
+    "*.ts"
+  ]
 }

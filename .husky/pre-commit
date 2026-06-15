@@ -1,25 +1,76 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Store the original commit message
-COMMIT_MSG_FILE="$GIT_DIR/COMMIT_EDITMSG"
-if [ -f "$COMMIT_MSG_FILE" ]; then
-  COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
-else
-  COMMIT_MSG=""
+typecheck_trigger_pattern='\.(ts|tsx|js|vue|html)$'
+
+is_git_submodule_path() {
+  local file_path="$1"
+  local index_entry
+
+  index_entry="$(git ls-files --stage -- "$file_path" || true)"
+  [[ "$index_entry" == 160000\ * ]]
+}
+
+staged_list="$(mktemp)"
+trap 'rm -f "$staged_list"' EXIT
+
+git diff --cached --name-only --diff-filter=ACM -z >"$staged_list"
+
+if [[ ! -s "$staged_list" ]]; then
+  echo "[pre-commit] no staged files found, skipping"
+  exit 0
 fi
 
-# Capture the list of originally staged files
-STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
+has_typeable_files=false
+has_non_submodule_files=false
 
-# Format JavaScript code
-npm run format
-
-# Only re-stage the files that were originally staged (if they were modified by formatting)
-if [ -n "$STAGED_FILES" ]; then
-  echo "$STAGED_FILES" | xargs git add
-
-  # Reapply the original commit message
-  if [ -n "$COMMIT_MSG" ]; then
-    echo "$COMMIT_MSG" > "$COMMIT_MSG_FILE"
+while IFS= read -r -d '' file; do
+  if is_git_submodule_path "$file"; then
+    echo "[pre-commit] skipping git submodule path: $file"
+    continue
   fi
+
+  has_non_submodule_files=true
+
+  if [[ "$file" == *.sh ]]; then
+    git update-index --chmod=+x "$file"
+  fi
+
+  if [[ "$file" =~ $typecheck_trigger_pattern ]]; then
+    has_typeable_files=true
+  fi
+done <"$staged_list"
+
+if [[ "$has_non_submodule_files" != true ]]; then
+  echo "[pre-commit] only git submodule paths staged, skipping"
+  exit 0
 fi
+
+if [[ "$has_typeable_files" == true ]]; then
+  echo "[pre-commit] running type-check..."
+  pnpm type-check || {
+    echo "[pre-commit] ABORT: type-check failed — fix type errors before committing"
+    exit 1
+  }
+  echo "[pre-commit] type-check passed"
+else
+  echo "[pre-commit] no type-check-triggering files staged, skipping type-check"
+fi
+
+echo "[pre-commit] running pnpm format..."
+pnpm format || {
+  echo "[pre-commit] ABORT: format failed"
+  exit 1
+}
+echo "[pre-commit] format passed"
+
+echo "[pre-commit] re-staging auto-fixed files..."
+while IFS= read -r -d '' file; do
+  if is_git_submodule_path "$file"; then
+    continue
+  fi
+
+  git add -- "$file"
+done <"$staged_list"
+
+echo "[pre-commit] all checks passed"

@@ -1,22 +1,22 @@
 {
   "name": "@babadeluxe/xo-config",
-  "version": "0.3.2",
+  "version": "0.4.17",
   "description": "Shared XO ESLint configuration with Prettier integration",
   "author": "simwai",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/xo.config.cjs",
+  "module": "./dist/xo.config.mjs",
+  "types": "./dist/xo.config.d.ts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
+        "types": "./dist/xo.config.d.mts",
+        "default": "./dist/xo.config.mjs"
       },
       "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
+        "types": "./dist/xo.config.d.cts",
+        "default": "./dist/xo.config.cjs"
       }
     }
   },
@@ -31,31 +31,48 @@
     "prettier"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=20.19.0"
   },
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c",
+  "pnpm": {
+    "neverBuiltDependencies": [
+      "@babadeluxe/shared"
+    ]
+  },
+  "sideEffects": false,
   "scripts": {
-    "format": "xo . --config ./src/index.ts --prettier --fix",
+    "prepare": "husky && git submodule update --init --recursive",
+    "pnpm:devPreinstall": "pnpx tsx ./setup-npmrc.ts",
+    "prepack": "pnpx tsx ./setup-npmrc.ts",
+    "format": "xo . --config ./xo.config.ts --prettier --fix",
     "build": "unbuild",
-    "test-package": "npm pack --dry-run",
-    "publish-patch": "npm run build && npm version patch && npm publish",
-    "publish-minor": "npm run build && version minor && npm publish",
-    "publish-major": "npm run build && version major && npm publish",
-    "prepare": "husky"
+    "type-check": "tsc --noEmit",
+    "test-package": "pnpm build && pnpm pack --dry-run",
+    "publish-patch": "tsx ./publish.ts patch",
+    "publish-minor": "tsx ./publish.ts minor",
+    "publish-major": "tsx ./publish.ts major"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.43.0",
-    "@typescript-eslint/parser": "^8.43.0",
-    "xo": "^1.2.2"
+    "@typescript-eslint/eslint-plugin": "8.57.1",
+    "@typescript-eslint/parser": "8.57.1",
+    "xo": "1.2.3"
   },
   "devDependencies": {
-    "@sindresorhus/tsconfig": "^8.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.43.0",
-    "@typescript-eslint/parser": "^8.43.0",
-    "baseline-browser-mapping": "^2.8.32",
+    "@sindresorhus/tsconfig": "8.0.1",
+    "@types/node": "^20.19.0",
+    "@typescript-eslint/eslint-plugin": "8.57.1",
+    "@typescript-eslint/parser": "8.57.1",
+    "baseline-browser-mapping": "latest",
     "husky": "^9.1.7",
-    "rimraf": "^6.0.1",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.2",
     "unbuild": "^2.0.0",
-    "xo": "^1.2.2"
+    "xo": "1.2.3"
+  },
+  "publishConfig": {
+    "registry": "https://npflared.simonwaiblinger.workers.dev"
+  },
+  "dependencies": {
+    "@babadeluxe/shared": "^0.20.8"
   }
 }
